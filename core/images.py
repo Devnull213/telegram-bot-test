@@ -1,11 +1,13 @@
+from dataclasses import dataclass
+from bs4 import BeautifulSoup
 import random
 import requests
-from bs4 import BeautifulSoup
 
+
+@dataclass
 class Images:
-    def __init__(self):
-        self.url = "https://www.thrillophilia.com/places-to-visit-in-germany"
-        self.data = requests.get(self.url)
+    url: str = "https://www.thrillophilia.com/places-to-visit-in-germany"
+    data = requests.get(url)
 
     def parse_data(self) -> list:
         try:
