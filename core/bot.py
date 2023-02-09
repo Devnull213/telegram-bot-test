@@ -1,16 +1,17 @@
+from dataclasses import dataclass
 from dotenv import load_dotenv
-from pathlib import Path
 import telepot
 import os
 
-dotenv_path = Path("./environ.env")
+
+dotenv_path = os.path.expanduser("./core/environ.env")
 load_dotenv(dotenv_path=dotenv_path)
 
+@dataclass
 class Bot:
-    def __init__(self):
-        self.BOT_TOKEN = os.environ["BOT_TOKEN"]
-        self.CHAT_ID = os.environ["CHAT_ID"]
-        self.bot = telepot.Bot(self.BOT_TOKEN)
+    BOT_TOKEN = os.getenv("BOT_TOKEN")
+    CHAT_ID = os.getenv("CHAT_ID")
+    bot = telepot.Bot(BOT_TOKEN)
 
     def send_message(self, message, image) -> None:
         title = image[0].get("alt")
