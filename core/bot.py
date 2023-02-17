@@ -30,4 +30,4 @@ class Bot:
         """
         title = image[0].get("alt")
         self.bot.sendPhoto(self.CHAT_ID, image[0].get("data-srcset").split(" ")[0])
-        self.bot.sendMessage(self.CHAT_ID, f"{title}\n{message} test")
+        self.bot.sendMessage(self.CHAT_ID, f"{title}\n{message}")

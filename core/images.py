@@ -9,7 +9,7 @@ import requests
 class Images:
     """ Class that gets webscrapped info and returns the urls"""
     url: str = "https://www.thrillophilia.com/places-to-visit-in-germany"
-    data = requests.get(url, timeout=2)
+    data = requests.get(url, timeout=5)
 
     def parse_data(self) -> list:
         """
