@@ -9,7 +9,6 @@ def execution() -> None:
 
 
 if __name__ == "__main__":
-    image = Images() 
+    image = Images()
     bot = Bot()
     execution()
-
