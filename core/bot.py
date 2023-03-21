@@ -17,7 +17,7 @@ class Bot:
     CHAT_ID = os.getenv("CHAT_ID")
     bot = telepot.Bot(BOT_TOKEN)
 
-    def send_message(self, message, image) -> None:
+    def send_message(self, message, message2, image) -> None:
         """
         This method takes a message and a randomize image to send telegram message
 
@@ -30,4 +30,5 @@ class Bot:
         """
         title = image[0].get("alt")
         self.bot.sendPhoto(self.CHAT_ID, image[0].get("data-srcset").split(" ")[0])
-        self.bot.sendMessage(self.CHAT_ID, f"{title}\n{message}")
+        self.bot.sendMessage(self.CHAT_ID, f"{title}\n{message}\n")
+        self.bot.sendMessage(self.CHAT_ID, f"{message2}")
